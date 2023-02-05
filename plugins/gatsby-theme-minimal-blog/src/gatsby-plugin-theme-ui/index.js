@@ -6,6 +6,9 @@ import a11yPlugin from "colord/plugins/a11y";
 import labPlugin from "colord/plugins/lab";
 import harmonies from "colord/plugins/harmonies";
 
+import "@fontsource/anybody/variable-full.css";
+import "@fontsource/raleway";
+
 // import slussen from "../../static/fonts/Slussen-Extended-Black-TRIAL.otf";
 
 // console.log("font: " + slussen);
@@ -20,6 +23,10 @@ extend([a11yPlugin, labPlugin, harmonies]);
 var hueBackground = Math.floor(Math.random() * 360);
 var hueForeground = Math.floor(Math.random() * 360);
 
+// Random set of bgs
+var bgLight = colord({ h: hueBackground, s: 100, l: 60 }).toHex();
+var fgLight = colord({ h: hueForeground, s: 100, l: 20 }).toHex();
+
 const minHueContrast = 10
 while (colord(fgLight).isReadable(bgLight)==false)
 {
@@ -31,13 +38,11 @@ while (colord(fgLight).isReadable(bgLight)==false)
   }
 }
 
-// Random set of bgs
-var bgLight = colord({ h: hueBackground, s: 100, l: 60 }).toHex();
 var bgA = bgLight;
 var bgB = colord(bgLight).darken(0.4).saturate(0.1).toHex();
 
 // Random set of fgs
-var fgLight = colord({ h: hueForeground, s: 100, l: 20 }).toHex();
+
 var fgA = fgLight;
 var fgB = colord(fgLight).lighten(0.5).toHex();
 
@@ -53,8 +58,7 @@ var fgB = colord(fgLight).lighten(0.5).toHex();
 // import "@fontsource/apfel-grotezk" // Defaults to weight 400 with all styles included.
 
 
-// import "@fontsource/anybody/variable-full.css";
-// import "@fontsource/raleway";
+
 
 
 const theme = merge(tailwind, {

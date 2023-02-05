@@ -16,6 +16,9 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "@fontsource/anybody": "^4.5.5",
+    "@fontsource/apfel-grotezk": "^4.5.2",
+    "@fontsource/sniglet": "^4.5.10",
     "@lekoarts/gatsby-theme-minimal-blog": "^6.0.5",
     "gatsby": "^5.5.0",
     "gatsby-plugin-feed": "^5.5.0",

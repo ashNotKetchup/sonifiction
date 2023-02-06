@@ -20,7 +20,11 @@ extend([a11yPlugin, labPlugin, harmonies]);
 //     hues.push(i);
 // }
 
+// var hueBackground = Math.floor(Math.random() * 360);
 var hueBackground = Math.floor(Math.random() * 360);
+
+
+
 var hueForeground = Math.floor(Math.random() * 360);
 
 // Random set of bgs
@@ -32,14 +36,22 @@ while (colord(fgLight).isReadable(bgLight)==false)
 {
   if(hueBackground > hueForeground){
     hueBackground+=minHueContrast;
+    // bgLight = colord({ h: hueBackground, s: 100, l: 60 }).toHex();
   }
   else{
     hueBackground-=minHueContrast;
+    // bgLight = colord({ h: hueBackground, s: 100, l: 60 }).toHex();
   }
+
+  bgLight = colord({ h: hueBackground, s: 100, l: 60 }).toHex();
 }
+
+bgLight = colord({ h: hueBackground, s: 100, l: 100 }).toHex();
 
 var bgA = bgLight;
 var bgB = colord(bgLight).darken(0.4).saturate(0.1).toHex();
+
+var bgB = colord(bgLight).darken(0.9).saturate(0.1).toHex();
 
 // Random set of fgs
 
